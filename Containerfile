@@ -10,4 +10,7 @@ RUN pacman -Syyu --noconfirm ddclient
 # Clean up cache
 RUN pacman -Scc --noconfirm
 
+VOLUME ["/var/cache/ddclient", "/etc/ddclient"]
+
 ENTRYPOINT ["ddclient"]
+CMD ["-foreground"]
